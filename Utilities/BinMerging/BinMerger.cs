@@ -170,7 +170,7 @@ namespace AemulusModManager
                         && Path.GetExtension(file).ToLower() != ".xml" && Path.GetExtension(file).ToLower() != ".png"
                         && Path.GetExtension(file).ToLower() != ".jpg" && Path.GetExtension(file).ToLower() != ".7z"
                         && Path.GetExtension(file).ToLower() != ".bat" && Path.GetExtension(file).ToLower() != ".txt"
-                        && Path.GetExtension(file).ToLower() != ".zip" && Path.GetExtension(file).ToLower() != ".json"
+                        && Path.GetExtension(file).ToLower() != ".zip" && (Path.GetExtension(file).ToLower() != ".json") || (file.Substring(mod.Length).ToLower().Contains("\\dungeonloader\\"))
                         && Path.GetExtension(file).ToLower() != ".tbp" && Path.GetExtension(file).ToLower() != ".rar"
                         && Path.GetExtension(file).ToLower() != ".exe" && Path.GetExtension(file).ToLower() != ".dll"
                         && Path.GetExtension(file).ToLower() != ".flow" && Path.GetExtension(file).ToLower() != ".msg"
@@ -195,7 +195,8 @@ namespace AemulusModManager
                             || Path.GetExtension(file).ToLower() == ".pac"
                             || Path.GetExtension(file).ToLower() == ".pack"
                             || Path.GetExtension(file).ToLower() == ".gsd"
-                            || Path.GetExtension(file).ToLower() == ".tpc")
+                            || Path.GetExtension(file).ToLower() == ".tpc"
+                            || (Path.GetExtension(file).ToLower() == ".json") && file.Substring(mod.Length).ToLower().Contains("\\dungeonloader\\") )
                         {
                             if (FileIOWrapper.Exists(ogBinPath) && modList.Count > 0)
                             {
